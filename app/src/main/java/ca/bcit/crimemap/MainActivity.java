@@ -1,11 +1,15 @@
 package ca.bcit.crimemap;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+
 
 public class MainActivity extends AppCompatActivity {
     private MapView mapView;
@@ -17,7 +21,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(MapboxMap mapboxMap) {
+                // One way to add a marker view
+                mapboxMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(49.2193226,-122.59839))
+                        .title("Maple Ridge")
+                        .snippet("Property Crime Map")
+                );
+            }
+        });
+
     }
+
+
 
     @Override
     public void onStart() {
@@ -60,4 +78,9 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         mapView.onSaveInstanceState(outState);
     }
+
+
+
+
 }
+
