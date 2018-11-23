@@ -14,6 +14,6 @@
         android:layout_height="match_parent"
         mapbox:mapbox_cameraTargetLat="49.2193226"
         mapbox:mapbox_cameraTargetLng="-122.598398"
-        mapbox:mapbox_styleUrl="mapbox://styles/serotoninplus/cjojijh5y9rm62rpfndx94u6g"
+        mapbox:mapbox_styleUrl="mapbox://styles/serotoninplus/cjotd814rcrwq2spzsgxu80yg"
         mapbox:mapbox_cameraZoom="11" />
 </RelativeLayout>
